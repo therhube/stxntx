@@ -176,7 +176,7 @@ body a {
 
 .no-padding { padding: 0; }
 .small-padding { padding: 40px 0; }				/*AR: I tried cutting all of these in half to bring down whitespace but didn't notice anything*/
-.medium-padding { padding: 60px 0; }
+.medium-padding { padding: 30px 0; }			/*AR: cut this in half, should move post tiles on homepage up closer to search bar */
 .big-padding { padding: 100px 0; }
 
 .section-inner {
@@ -253,6 +253,7 @@ body a {
 	font-size: 80px;
 	font-variant: small-caps;									/* AR: small caps is over-ridden if blog title is written in all caps */
 	text-align: left;
+	margin: 0px 0 0 30px;	
 	text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
 }
 
@@ -267,7 +268,7 @@ body a {
 	line-height: 110%;
 	font-weight: 400;
 	color: #585B7D;
-	margin: 20px 0 0 0;
+	margin: 20px 0 0 32px;											/* AR: margin: top right bottom left */;
 	text-align: left;
 	/* text-shadow: 1px 1px 1px rgba(0,0,0,0.25);				AR: turned off the text shadow */
 }
@@ -276,8 +277,8 @@ body a {
 
 .search-toggle {
 	display: block;
-	width: 68px;
-	height: 68px;
+	width: 30px;
+	height: 30px;											/*AR: reduced from 68 because I think this was forcing entire menu bar to be 68 tall*/
 	background: url(images/icons/1x/spyglass-w.png) no-repeat center;
 	background-size: 24px auto;
 	-webkit-opacity: 0.5;
@@ -342,7 +343,7 @@ body a {
 .main-menu > li { float: left; }
 
 .main-menu > li:before {
-	content: "/";
+	content: "|";
 	display: block;
 	position: absolute;
 	right: 0;
@@ -359,7 +360,7 @@ body a {
 
 .main-menu > li > a {
 	display: block;
-	padding: 27px;
+	padding: 20px 10px 20px 10px;
 	font-size: 0.85em;
 	color: #999;
 	text-transform: uppercase;
@@ -510,7 +511,8 @@ body a {
 
 .post-container {
 	width: 33.3%;
-	padding: 0 1.5% 4.5% 1.5%;
+	padding: 15px 15px 15px 15px;										/* AR: changed padding inside the homepage post container*/
+	/*padding: 0 1.5% 4.5% 1.5%;*/
 }
 
 .hentry,
@@ -565,7 +567,7 @@ body a {
 
 .featured-media a { overflow: hidden; }
 
-.featured-media a img { margin: 0 auto; }
+.featured-media a img { margin: 0 auto; }								/*AR: this would add padding around featured images within homepage tiles*/
 
 .featured-media a:hover img { 
 	-webkit-transform: scale(1.1); 
@@ -593,7 +595,7 @@ body a {
 
 .post-header { 
 	position: relative; 
-	padding: 8% 10%;
+	padding: 6% 7.5%;								/* AR: padding: using just two makes two options repeat, top/bottom, right/left; changed from 8% 10% */
 	border-bottom: 1px solid #eee;
 }
 
@@ -610,7 +612,7 @@ body a {
 .post-header .post-title a { color: #2B3542; }
 .post-header .post-title a:hover { color: #585B7D; }
 
-.post-excerpt { padding: 10%; }
+.post-excerpt { padding: 7.5%; }					/*AR: reduced from 10% to reduce whitespace within post tiles on homepage*/
 
 .post-excerpt p {
 	font-size: 0.95em;
@@ -629,7 +631,7 @@ body a {
 
 .posts .post-meta { 
 	background: #F9F9F9; 
-	padding: 0 10%;
+	padding: 0 7.5%;									/*AR: changed from 0 10% to 0 7.5% to move datestamp at bottom of post tile to align left with other text*/
 }
 
 .posts .post-meta a {
@@ -638,7 +640,7 @@ body a {
 	font-size: 0.8em;
 	font-weight: 700;
 	float: left;
-	padding: 20px 0px 20px 24px;
+	padding: 20px 10px 20px 0px;						/*AR: altered this padding to adjust spacing of datestamp and comment link*/
 	background: no-repeat left center;
 	background-size: 18px auto;
 	margin-left: 20px;
@@ -880,13 +882,19 @@ body.single .content.center {
 .single { border-radius: 6px; }
 
 /* post header */
+/* added .post-header subclass in the hopes of over-riding the div.post-header class to reduce whitespace on single post pages */
+.single .post-header { 
+	position: relative; 
+	padding: 3% 4%;								/* AR: padding: using just two makes two options repeat, top/bottom, right/left; changed from 8% 10% */
+	border-bottom: 1px solid #eee;
+}
 
-.single .post-title { font-size: 2.25em; }
+.single .post-title { font-size: 2em; }			/*AR: reduced from 2.25*/
 
 /* AR: added this line to remove the featured image display from the single post page; */
 .single .featured-media { display: none; }
 
-.single .post-content { padding: 10%; }
+.single .post-content { padding: 2.5% 4.5%; }				/*AR: reduced from single 10% padding around post content*/
 
 /* format gallery */
 
@@ -2108,7 +2116,7 @@ p.form-submit { margin-top: 30px; }
 .footer .searchform .s {
 	display: block;
 	width: 100%;
-	padding: 16px 55px 16px 20px;
+	padding: 16px 55px 16px 20px;								/* AR: padding: top right bottom left */;
 	border: none;
 	margin: 0;
 	background: #ddd;
@@ -2433,11 +2441,11 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	
 	/* main content */
 	
-	.section-inner.content { max-width: 94%; }
+	.section-inner.content { max-width: 96%; }
 
 	.post-container {
 		width: 50%;
-		padding: 0 2% 5% 2%;
+		padding: 0 2% 5% 2%;											/* AR: padding: top right bottom left */;
 	}
 	
 			

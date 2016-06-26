@@ -145,8 +145,8 @@ body a {
 
 .screen-reader-text:focus {
 	background-color: #B0B0B0;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	border-radius: 5px;
+	box-shadow: 0 0 2px 2px rgba(59,59,59,0.5);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -520,10 +520,10 @@ body a {
 	width: 100%;
 	position: relative;
 	background: #fff;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 4px rgba(59,59,59,0.5);
+	-moz-box-shadow: 0 1px 4px rgba(59,59,59,0.5);
+	box-shadow: 0 1px 4px rgba(59,59,59,0.5);
 	overflow: hidden;
 }
 
@@ -536,7 +536,7 @@ body a {
 	right: 5%;
 	height: 38px;
 	width: 26px;
-	background: #2B3542 url(images/icons/1x/tack-w.png) no-repeat center;
+	background: #3B3B3B url(images/icons/1x/tack-w.png) no-repeat center;
 	background-size: 12px auto;
 	top: 0;	
 	text-indent: -9999px;
@@ -546,8 +546,8 @@ body a {
 	content: "";
 	display: block;
 	border: 13px solid transparent;
-	border-left-color: #2B3542;
-	border-right-color: #2B3542;
+	border-left-color: #3B3B3B;
+	border-right-color: #3B3B3B;
 	position: absolute;
 	right: 0;
 	margin-top: -13px;
@@ -604,12 +604,12 @@ body a {
 	font-size: 1.25em;
 	line-height: 120%;
 	font-weight: 700;
-	color: #2B3542;
+	color: #3B3B3B;
 	word-break: break-word;
 	-ms-word-break: break-word;
 }
 
-.post-header .post-title a { color: #2B3542; }
+.post-header .post-title a { color: #3B3B3B; }
 .post-header .post-title a:hover { color: #585B7D; }
 
 .post-excerpt { padding: 7.5%; }					/*AR: reduced from 10% to reduce whitespace within post tiles on homepage*/
@@ -728,7 +728,7 @@ body a {
 
 .post-quote {
 	padding: 10%;
-	background: #2B3542;
+	background: #3B3B3B;
 	color: #fff;
 }
 
@@ -766,7 +766,7 @@ body a {
 
 .post-link {
 	padding: 10%;
-	background: #2B3542;
+	background: #3B3B3B;
 	color: #fff;
 }
 
@@ -834,7 +834,7 @@ body a {
 
 
 .posts .format-status .post-excerpt {
-	background: #2B3542;
+	background: #3B3B3B;
 }
 
 .posts .format-status .post-excerpt p,
@@ -857,7 +857,7 @@ body a {
 .format-chat .post-content p {
 	margin-bottom: 0.25em;
 	padding: 8px 16px;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 .format-chat .post-content p:nth-child(odd) { background: #f5f5f5; }
@@ -871,22 +871,22 @@ body a {
 /* -------------------------------------------------------------------------------- */
 
 
-body.single .content { width: 67.5%; }
+body.single .content { width: 72.5%; }						/* AR: reduced width of right sidebar widget by 5pts from 27.5 to 22.5 so bumped this from 67.5 to 72.5; */
 body.single .content.full-width { width: 100%; }
 body.single .content.center { 
 	margin: 0 auto; 
-	width: 944px;
+	width: 1015px;											/* AR: adjusted this upward to make it closer to 72.5% of 1400 instead of 67.5% of 1400; */
 	max-width: 100%; 
 }
 
-.single { border-radius: 6px; }
+.single { border-radius: 5px; }	
 
 /* post header */
 /* added .post-header subclass in the hopes of over-riding the div.post-header class to reduce whitespace on single post pages */
 .single .post-header { 
 	position: relative; 
-	padding: 3% 4%;								/* AR: padding: using just two makes two options repeat, top/bottom, right/left; changed from 8% 10% */
-	border-bottom: 1px solid #eee;
+	padding: 3% 4%;								/* AR: padding: using just two makes two options repeat, top/bottom, right/left; changed from 8% 10% to reduce whitespace around the post tile */
+	border-bottom: 1px solid #eee;			/* AR: tiny line under title behind the arrow*/
 }
 
 .single .post-title { font-size: 2em; }			/*AR: reduced from 2.25*/
@@ -919,7 +919,7 @@ body.single .content.center {
 
 .single .post-meta-container { 
 	position: relative; 
-	background: #2B3542;
+	background: #3B3B3B;
 }
 
 .single .post-meta-container:after {
@@ -1189,7 +1189,7 @@ code, kbd, pre {
 .post-content kbd,
 .post-content code {
 	padding: 5px;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 .post-content dl { line-height: 160%; }
@@ -1255,7 +1255,7 @@ code, kbd, pre {
 	background: #363F48;
 	font-size: 0.8em;
 	color: #FFF;
-	border-radius: 6px;
+	border-radius: 5px;
 }
 
 
@@ -1408,7 +1408,7 @@ img.alignright,
 	color: #333;
 	border: 2px solid #eee;
 	background: #fdfdfd;
-	border-radius: 3px;
+	border-radius: 5px;
 	-webkit-transition: background 0.2s ease-in-out;
 	-moz-transition: background 0.2s ease-in-out;
 	-ms-transition: background 0.2s ease-in-out;
@@ -1443,7 +1443,7 @@ img.alignright,
 	font-size: 0.9rem;
 	line-height: 1;
 	-webkit-appearance: none;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 .post-content input[type="submit"]:hover,
@@ -1491,7 +1491,7 @@ div#disqus_thread {
 .comments-title { 
 	font-size: 1.75em;
 	font-weight: 700;
-	color: #2B3542; 
+	color: #3B3B3B; 
 }
 
 .add-comment-title {
@@ -1520,7 +1520,7 @@ div#disqus_thread {
 	padding: 20px;
 	background: #eee;
 	position: relative;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 .comment-inner:after {
@@ -1537,7 +1537,7 @@ div#disqus_thread {
 .comment .avatar {
 	float: left;
 	width: 80px;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 .comment.bypostauthor { position: relative; }
@@ -1568,7 +1568,7 @@ div#disqus_thread {
 }
 
 .comment-header cite,
-.comment-header cite a { color: #2B3542; }
+.comment-header cite a { color: #3B3B3B; }
 .comment-header cite a:hover { color: #585B7D; }
 
 .comment-header p { font-size: 0.85em; }
@@ -1670,7 +1670,7 @@ div#disqus_thread {
 	float: left;
 	width: 32px;
 	height: 32px;
-	background: #2B3542 no-repeat center;
+	background: #3B3B3B no-repeat center;
 	background-size: 16px auto;
 	border-radius: 999px;
 	text-indent: -9999px;
@@ -1708,7 +1708,7 @@ div#disqus_thread {
 	font-family: 'Cambria';
 	font-size: 1.25em;
 	margin-bottom: 20px;
-	color: #2B3542;
+	color: #3B3B3B;
 }
 
 .pingbacklist .pingback {
@@ -1716,7 +1716,7 @@ div#disqus_thread {
 	line-height: 130%;
 }
 
-.pingbacklist .pingback a { color: #767676; }
+.pingbacklist .pingback a { color: #646464; }
 .pingbacklist .pingback a:hover { color: #585B7D; }
 
 .pingbacklist .pingback:nth-child(2n) { background-color: #eee; }
@@ -1742,7 +1742,7 @@ div#disqus_thread {
 	font-family: 'Cambria';
 	font-size: 1.75em;
 	font-weight: 700;
-	color: #2B3542;
+	color: #3B3B3B;
 }
 
 .comment-reply-title #cancel-comment-reply-link {
@@ -1782,7 +1782,7 @@ div#disqus_thread {
 	display: block;
 	width: 100%;
 	padding: 16px 18px;
-	border-radius: 3px;
+	border-radius: 5px;
 	background: #B0B0B0;
 	color: #333;
 	border: 1px solid #eee;
@@ -1816,7 +1816,7 @@ input#url { background-image: url(images/icons/1x/home-g.png); background-size: 
 .comment-form textarea:focus {
 	outline: none;
 	color: #fff;
-	background-color: #2B3542;
+	background-color: #3B3B3B;
 }
 
 input#author:focus { background-image: url(images/icons/1x/author-w.png); }
@@ -1846,9 +1846,9 @@ p.form-submit { margin-top: 30px; }
 	font-size: 0.9em;
 	font-weight: 400;
 	color: #fff;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-	background: #2B3542;
-	border-radius: 3px;
+	text-shadow: 1px 1px 1px rgba(59,59,59,0.5);
+	background: #3B3B3B;
+	border-radius: 5px;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -1867,10 +1867,10 @@ p.form-submit { margin-top: 30px; }
 	width: 100%;
 	position: relative;
 	background: #fff;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 4px rgba(59,59,59,0.5);				/* AR: changed from 0,0,0 (black) to 59,59,59 (dark gray) and 0.1 to 0.5 for more pronounced box-shadows*/
+	-moz-box-shadow: 0 1px 4px rgba(59,59,59,0.5);
+	box-shadow: 0 1px 4px rgba(59,59,59,0.5);
 	overflow: hidden;
 }
 
@@ -1930,7 +1930,7 @@ p.form-submit { margin-top: 30px; }
 	margin-bottom: 10px;
 }
 
-.author-info h4 a { color: #2B3542; }
+.author-info h4 a { color: #3B3B3B; }
 .author-info h4 a:hover { color: #585B7D; }
 
 .author-info h5 {
@@ -1947,7 +1947,7 @@ p.form-submit { margin-top: 30px; }
 	text-align: center;
 }
 
-.author-info .author-links a { background-color: #2B3542; }
+.author-info .author-links a { background-color: #3B3B3B; }
 .author-info .author-links a:hover { background-color: #585B7D; }
 
 
@@ -1989,14 +1989,14 @@ p.form-submit { margin-top: 30px; }
 	font-size: 1.75em;
 	font-weight: 400;
 	text-align: center;
-	color: #2B3542;
+	color: #3B3B3B;
 
 }
 
 .tag-archive-meta p {
 	text-align: center;
 	margin-top: 15px;
-	color: #767676;
+	color: #646464;
 	font-style: italic;
 }
 
@@ -2006,8 +2006,8 @@ p.form-submit { margin-top: 30px; }
 .archive-nav a {
 	font-size: 0.9em;
 	padding: 16px 20px;
-	background: #2B3542;
-	border-radius: 3px;
+	background: #3B3B3B;
+	border-radius: 5px;
 	color: #fff;
 }
 
@@ -2027,33 +2027,33 @@ p.form-submit { margin-top: 30px; }
 
 
 .sidebar {
-	width: 27.5%;
+	width: 22.5%;
 	background: #fff;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 4px rgba(59,59,59,0.5);
+	-moz-box-shadow: 0 1px 4px rgba(59,59,59,0.5);
+	box-shadow: 0 1px 4px rgba(59,59,59,0.5);
+	border-radius: 5px;
 	overflow: hidden;
 }
 
 .sidebar .widget {
-	padding: 30px;
-	border-top: 1px solid #EEE;
+	padding: 25px;
+	border-top: 1px solid #EEE;					/* AR: small line separating widget sections. 1st section doesn't have a top */
 }
 
 .sidebar .widget:first-child { border-top: none; }
 
 .widget-title {
-	font-family: 'Cambria';
-	font-size: 0.9em;
-	font-weight: 700;
-	text-transform: uppercase;
+	font-family: 'Calibri';
+	font-size: 1.2em;							/* AR: increased size from 0.9 to 1.2em, reduced weight from 700 to 500 and changed from uppercase to capitalize*/
+	font-weight: 500;
+	text-transform: capitalize;
 	margin-bottom: 20px;
 }
 
 .sidebar .widget-content { 
 	font-size: 0.85em; 
-	color: #767676; 
+	color: #646464; 
 }
 
 .widget-content a:hover { text-decoration: underline; }
@@ -2063,14 +2063,14 @@ p.form-submit { margin-top: 30px; }
 .widget-content ul li {
 	position: relative;
 	margin-top: 10px;
-	padding: 1px 0 1px 14px;
+	padding: 1px 0 1px 20px;
 	line-height: 130%;
 }
 
 .widget-content ul li:before {
-	content: "»";
+	content: "+";
 	position: absolute;
-	left: 0;
+	left: 5px;
 	top: 0;
 	color: #585B7D;
 	font-size: 18px;
@@ -2100,7 +2100,7 @@ p.form-submit { margin-top: 30px; }
 	font-size: 0.8em !important;
 	line-height: 1;
 	color: #FFF;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 .tagcloud a:hover { background-color: #585B7D; color: #fff; text-decoration: none; }
@@ -2119,9 +2119,9 @@ p.form-submit { margin-top: 30px; }
 	padding: 16px 55px 16px 20px;								/* AR: padding: top right bottom left */;
 	border: none;
 	margin: 0;
-	background: #ddd;
-	color: #fff;
-	border-radius: 3px;
+	background: #B0B0B0;
+	color: #3B3B3B;
+	border-radius: 5px;
 	font-family: 'Calibri';
 	font-size: 0.9em;
 	-webkit-font-smoothing: antialiased;
@@ -2129,7 +2129,7 @@ p.form-submit { margin-top: 30px; }
 
 .wrapper .searchform .s:focus,
 .footer .searchform .s:focus { 
-	background-color: #2B3542; 
+	background-color: #3B3B3B; 
 	outline: none;
 }
 
@@ -2294,7 +2294,7 @@ p.form-submit { margin-top: 30px; }
 }
 
 .footer .widget-content { 
-	color: #767676; 
+	color: #646464; 
 	font-size: 0.95em;
 }
 
@@ -2344,7 +2344,7 @@ p.form-submit { margin-top: 30px; }
 
 .credits p {
 	font-family: 'Cambria';
-	color: #767676; 
+	color: #646464; 
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -2797,7 +2797,7 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	.post-author:before, 
 	.post-author:after { left: 15px; }
 	
-	.post-author-content { margin-left: 40px; }
+	.post-author-content { margin-left: 0px; }
 	
 	/* comments */
 	

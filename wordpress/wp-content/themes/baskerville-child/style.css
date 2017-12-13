@@ -1077,7 +1077,7 @@ a.post-nav-next:hover { background-image: url(images/icons/1x/next-c.png); }
 .post-content dl,
 .post-content .wp-caption,
 .post-content pre {
-	line-height: 180%;
+	line-height: 150%;								/*AR: adjusted downward from 180% to 150% to reduce post-content white space between lines of text*/
 	margin-bottom: 1.1em;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -1128,19 +1128,21 @@ a.post-nav-next:hover { background-image: url(images/icons/1x/next-c.png); }
 
 .post-content blockquote:before,
 .post-content blockquote:after {
-	content: "";
+	content: """";
 	display: block;
-	width: 128px;
-	height: 3px;
-	background: #eee;
-	margin: 40px auto;
+	width: 200px;				/*AR: increased blockquote line length from 128px to 200px */
+	height: 2px;
+	background: #585B7D;		/*AR: changed from off #eee color to my dark blue/gray color */
+	margin: 20px auto;			/*AR: changed from 40px to 20px to reduce whitespace around blockquote symbols */
 }
 
-.post-content blockquote p { 
+.post-content blockquote p {	/*AR: edited this entire tag to change the way the standard blockquote text is displayed */
 	font-size: 1.2em;
 	line-height: 160%;
-	font-weight: 300;
+	font-weight: 400;
+	font-style: oblique;
 	text-align: center;
+	color: #585B7D;
 }
 
 .post-content cite {
@@ -1214,7 +1216,7 @@ code, kbd, pre {
 
 .post-content ol {
 	list-style: decimal;
-	margin-left: 1.5em;
+	margin-left: 3em;				/*AR: changed from 1.2 to 3 in order to give ordered lists more of an indent*/
 }
 
 .post-content ol ol { list-style: lower-alpha; }
@@ -1231,7 +1233,7 @@ code, kbd, pre {
 
 .post-content li {
 	margin-top: 0.5em;
-	line-height: 170%;
+	line-height: 120%;				/*AR: dropped from 180% to 120% in order to reduce white space between itemized lists*/
 }
 
 .post-content ol > li:last-child,

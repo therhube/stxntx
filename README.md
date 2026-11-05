@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # stxntx
 
 NBA analytics behind [Sticks and Ticks](https://sticksandticks.com/). Two questions:
@@ -43,3 +44,6 @@ Run data pulls from your own computer. stats.nba.com throttles fast requests and
 ## Data and terms
 
 Data comes from NBA.com and is subject to the NBA.com Terms of Use. This repo publishes only aggregates and charts; raw play-by-play stays local.
+=======
+"# stxnx" 
+>>>>>>> bf5ed6c002310e29acc80c7bdc1a442262ae0c1c

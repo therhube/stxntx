@@ -1,0 +1,12 @@
+player_name,nba_player_id,exclude_team,exclude_seasons,notes
+Stephen Curry,,,,subject
+LeBron James,,,,
+James Harden,,,,
+Kyrie Irving,,,,
+Kevin Durant,,GSW,2016-17;2017-18;2018-19,Curry teammate in these seasons
+Devin Booker,,,,
+Damian Lillard,,,,
+Giannis Antetokounmpo,,,,
+Ja Morant,,,,
+Russell Westbrook,,,,
+Kawhi Leonard,,,,

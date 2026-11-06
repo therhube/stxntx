@@ -4,12 +4,6 @@ import pandas as pd
 from pbpstats.resources.enhanced_pbp import FieldGoal, Foul, FreeThrow, Rebound, Turnover
 
 
-def clock_to_seconds(clock: str) -> float:
-    """'0:38.4' -> 38.4"""
-    minutes, seconds = clock.split(":")
-    return int(minutes) * 60 + float(seconds)
-
-
 def season_type(game_id: str) -> str:
     """The third digit of a game ID says the game type: 2 = regular season, 4 = playoffs."""
     return {"2": "Regular Season", "4": "Playoffs", "5": "Play-In"}.get(game_id[2], "Other")
@@ -44,8 +38,10 @@ def possession_table(game, game_id: str) -> pd.DataFrame:
     rows = []
     for p in game.possessions.items:
         offense = p.offense_team_id
-        start_score = p.previous_possession.events[-1].score if p.previous_possession else p.events[0].score
-        end_score = p.events[-1].score
+        # The event just before this possession began (or its first event, at the start of a period)
+        start_event = p.previous_possession.events[-1] if p.previous_possession else p.events[0]
+        end_event = p.events[-1]
+        start_score, end_score = start_event.score, end_event.score
         teams = [t for t in end_score.keys() if t != offense]
         rows.append({
             "game_id": game_id,
@@ -54,11 +50,15 @@ def possession_table(game, game_id: str) -> pd.DataFrame:
             "number": p.number,
             "offense_team_id": offense,
             "defense_team_id": teams[0] if teams else None,
-            "start_seconds": clock_to_seconds(p.start_time),
-            "end_seconds": clock_to_seconds(p.end_time),
+            # seconds_remaining reads both clock formats: "0:38.4" (older seasons)
+            # and "PT00M38.40S" (live feed)
+            "start_seconds": start_event.seconds_remaining,
+            "end_seconds": end_event.seconds_remaining,
             "start_type": p.possession_start_type,
             "first_action_seconds": first_action_seconds(p, offense),
             "has_oreb": has_offensive_rebound(p, offense),
             "points": end_score.get(offense, 0) - start_score.get(offense, 0),
         })
-    return pd.DataFrame(rows)
+    df = pd.DataFrame(rows)
+    df["defense_team_id"] = df["defense_team_id"].astype("Int64")  # whole numbers that allow a blank
+    return df
